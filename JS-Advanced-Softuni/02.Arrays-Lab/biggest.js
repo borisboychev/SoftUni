@@ -1,11 +1,6 @@
 function solve(arr) {
-  let result = [];
-  for (const array of arr) {
-    array.sort((a, b) => a - b).reverse();
-    result.push(array[0]);
-  }
-  result.sort((a, b) => a - b).reverse();
-  console.log(result[0]);
+  let maxNum = arr.map((row) => Math.max(...row));
+  console.log(maxNum.sort((a, b) => a - b).reverse()[0]);
 }
 
 // solve([
