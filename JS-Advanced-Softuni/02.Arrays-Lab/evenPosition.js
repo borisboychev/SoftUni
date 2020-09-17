@@ -9,3 +9,6 @@ function solve(arr) {
 }
 
 solve([20, 30, 40]);
+
+let a = 12 * 3;
+let b = 12 * 3;
