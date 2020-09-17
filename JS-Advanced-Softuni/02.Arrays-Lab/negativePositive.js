@@ -1,6 +1,13 @@
 function solve(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] >= 0) {
+  let result = [];
+  for (const number of arr) {
+    if (number >= 0) {
+      result.push(number);
+    } else {
+      result.unshift(number);
     }
   }
+  console.log(result);
 }
+
+solve([7, -2, 8, 9]);
