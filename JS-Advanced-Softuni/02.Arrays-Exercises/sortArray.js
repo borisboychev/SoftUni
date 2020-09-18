@@ -1,8 +1,5 @@
 function solve(arr) {
-  arr.sort(
-    (a, b) =>
-      a.length - b.length || a.toLowerCase().localeCompare(b.toLowerCase())
-  );
+  arr.sort((a, b) => a.length - b.length || a.localeCompare(b));
   console.log(arr.join("\n"));
 }
 
