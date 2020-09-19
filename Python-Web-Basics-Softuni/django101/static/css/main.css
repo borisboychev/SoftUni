@@ -1,0 +1,14 @@
+h1 {
+    color: #ff0000;
+}
+
+button {
+    color: #212121;
+    border-radius: 2px;
+}
+
+.highlighted{
+    text-decoration: underline;
+    text-decoration-color: aquamarine;
+    color: red;
+}

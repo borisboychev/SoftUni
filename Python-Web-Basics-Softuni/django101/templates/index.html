@@ -1,0 +1,42 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+    <h1 id="helloTxt">Hello World</h1>
+    <button id="colorBtn">Change Color</button>
+    <ul>
+        {% for user in users %}
+            <li class="highlightable">{{ user.username }}</li>
+        {% endfor %}
+    </ul>
+    <script>
+        //Changes hello world text color//
+        let clicked = false;
+        let btn = document.getElementById("colorBtn");
+        btn.onclick = function(){
+            let h1 = document.getElementById('helloTxt');
+            if (!clicked){
+                h1.style.color = '#0000ff'
+                clicked = true;
+            }else{
+                h1.style.color = '#FF0000'
+                clicked = false;
+            }
+        }
+    </script>
+</body>
+</html>
