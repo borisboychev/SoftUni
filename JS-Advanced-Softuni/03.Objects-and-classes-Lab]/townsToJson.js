@@ -11,14 +11,14 @@ function solve(input) {
 
   data.forEach((row) => {
     let town = {
-      Town: row[0],
-      Latitiude: Number(Number(row[1]).toFixed(2)),
-      Longitude: Number(Number(row[2]).toFixed(2)),
+      [properties[0]]: row[0],
+      [properties[1]]: Number(Number(row[1]).toFixed(2)),
+      [properties[2]]: Number(Number(row[2]).toFixed(2)),
     };
     result.push(town);
   });
 
-  console.log(result);
+  console.log(JSON.stringify(result));
 }
 
 solve([
