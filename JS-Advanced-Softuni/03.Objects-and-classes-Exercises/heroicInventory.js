@@ -13,7 +13,7 @@ function solve(input) {
 }
 
 solve([
-  "Isacc / 25 / Apple, GravityGun",
+  "Isacc / 25 / Apple, GravityGun, Tree",
   "Derek / 12 / BarrelVest, DestructionSword",
   "Hes / 1 / Desolator, Sentinel, Antara",
 ]);
