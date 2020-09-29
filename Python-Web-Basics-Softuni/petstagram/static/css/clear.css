@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+button{
+    border-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: rgba(0,0,0,0.5);
+}
+
+a:hover{
+    color: rgba(0, 0, 0, 0.7);
+}
+
+ul{
+    padding:0;
+    margin: 0;
+    list-style-type:none;
+}
+
+ul li, ol, li{
+    padding:0;
+    margin: 0;
+    list-style-type:none;
+}

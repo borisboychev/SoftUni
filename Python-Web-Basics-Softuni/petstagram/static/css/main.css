@@ -1,0 +1,20 @@
+body{
+    font-size:16px;
+}
+
+.list-horizontal .list-item{
+    display: inline-block;
+}
+
+.site-nav{
+    background-color: rgb(248, 249, 250);
+    /*height:60px;*/
+}
+
+.site-nav .list-item{
+    padding:15px 15px;
+}
+
+.site-nav .list-item:first-of-type{
+    margin-left:15px
+}
