@@ -11,8 +11,8 @@
 {% block site_main_content %}
     <h1 id="helloTxt">Games</h1>
     <ul>
-        {% for user in object_list %}
-            <li class="highlightable">Game: {{ user.name}}, with difficulty level: {{ user.level_of_difficulty }}</li>
+        {% for game in object_list %}
+            <li class="highlightable">Game: {{ game.name}}, with difficulty: {{ game.get_level_of_difficulty_display }}</li>
         {% endfor %}
     </ul>
 {% endblock %}

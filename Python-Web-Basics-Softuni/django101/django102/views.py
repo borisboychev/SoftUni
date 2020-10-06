@@ -3,7 +3,10 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import ListView
 
-from django102.models import Game
+""""Model Imports"""
+from django102.models.game import Game
+from django102.models.person import Person
+from django102.models.player import Player
 
 
 def index(request):
@@ -36,3 +39,4 @@ class UsersListView(ListView):
 class GamesListView(ListView):
     model = Game
     template_name = 'games.html'
+
