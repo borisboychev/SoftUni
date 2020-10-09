@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
 
 """"Model Imports"""
@@ -10,11 +10,14 @@ from django102.models.player import Player
 
 
 def index(request):
-    users = User.objects.all()
     title = "Django101"
+    users = User.objects.all()
+    games = Game.objects.all_with_players_count()
     context = {'title': title,
                'users': users,
+               'games': games
                }
+
     return render(request, 'index.html', context)
 
 
@@ -40,3 +43,11 @@ class GamesListView(ListView):
     model = Game
     template_name = 'games.html'
 
+
+def create_game(request):
+    game = Game(
+        name='LoL',
+        level_of_difficulty=2,
+    )
+    game.save()
+    return redirect(request, 'index')
