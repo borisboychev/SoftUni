@@ -14,11 +14,11 @@
     {% endblock %}
 </head>
 <body>
-    <div id="root">
-        {% include 'partials/nav.html' %}
-        {% block site_content %}
-            Petstagram
-        {% endblock %}
-    </div>
+{% include 'partials/nav.html' %}
+<div id="root">
+    {% block site_content %}
+        Petstagram
+    {% endblock %}
+</div>
 </body>
 </html>

@@ -18,3 +18,45 @@ body{
 .site-nav .list-item:first-of-type{
     margin-left:15px
 }
+
+.banner{
+    padding: 15px 15px 15px 15px;
+    height: 450px;
+    background-color: #e9ecef;
+}
+
+.banner:before{
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-image: url("/static/animals-bg.png");
+    display: block;
+    content: "";
+    height: 300px;
+}
+
+.banner header{
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding: 5px 0;
+}
+
+.row{
+    display:flex;
+    flex:50%;
+}
+
+.col{
+    flex: 50%;
+}
+
+.button{
+    padding: 5px 15px;
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    border-radius: 4px;
+}
+
+#root{
+    width: 1046px;
+    margin:auto;
+}
