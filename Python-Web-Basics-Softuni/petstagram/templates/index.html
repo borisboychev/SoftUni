@@ -1,31 +1,29 @@
 {% extends 'shared/site.html' %}
-
 {% load static %}
-{% block site_title %}
-    Welcome to Petstagram
-{% endblock %}
 
 {% block site_styles %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
 
+{% block site_title %}
+    Welcome to Petstagram
+{% endblock %}
+
 {% block site_content %}
-    <section>
+    <section class="banner">
         {#        <img src="{% static 'animals-bg.png' %}" alt="">#}
-        <div class="banner">
-            <header>
-                <h1 class="welcome-text">Welcome to Petstagram</h1>
-                <h2 class="other-text">Share your pets photos.</h2>
-            </header>
-            <div class="row">
-                <div class="col">
-                    Already have an account?
-                    <button class="button"><a href="#">Sign In</a></button>
-                </div>
-                <div class="col">
-                    Create an account.
-                    <button class="button"><a href="#">Sign Up</a></button>
-                </div>
+        <header>
+            <h1 class="welcome-text">Welcome to Petstagram</h1>
+            <h2 class="other-text">Share your pets photos.</h2>
+        </header>
+        <div class="row">
+            <div class="col">
+                Already have an account?
+                <button class="button"><a href="#">Sign In</a></button>
+            </div>
+            <div class="col">
+                Create an account.
+                <button class="button"><a href="#">Sign Up</a></button>
             </div>
         </div>
     </section>

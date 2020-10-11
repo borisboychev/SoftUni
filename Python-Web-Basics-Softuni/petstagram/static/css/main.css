@@ -2,6 +2,12 @@ body{
     font-size:16px;
 }
 
+section header{
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    margin: 25px 0;
+    padding-bottom: 25px;
+}
+
 .list-horizontal .list-item{
     display: inline-block;
 }
@@ -34,14 +40,8 @@ body{
     height: 300px;
 }
 
-.banner header{
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    padding: 5px 0;
-}
-
 .row{
     display:flex;
-    flex:50%;
 }
 
 .col{
@@ -49,11 +49,18 @@ body{
 }
 
 .button{
+    display:inline-block;
+
     padding: 5px 15px;
     color: #fff;
     background-color: #6c757d;
+
     border-color: #6c757d;
     border-radius: 4px;
+}
+
+.button:hover{
+    background-color:blue;
 }
 
 #root{
