@@ -6,15 +6,16 @@ function solve(input) {
       area() {
         return this.width * this.height;
       },
+      //positive number if the current rect is bigger
       compareTo(rect) {
         return this.area() - rect.area();
       },
     };
   });
-  let first = result[0];
-  let second = result[1];
-
-  console.log(first.compareTo(second));
+  result.sort((a, b) => {
+    return b.compareTo(a);
+  });
+  console.log(result);
 }
 
 solve([
