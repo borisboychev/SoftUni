@@ -21,4 +21,5 @@ import common
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('common.urls')),
+    path('pets/', include('pets.urls'))
 ]

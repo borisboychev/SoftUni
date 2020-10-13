@@ -27,7 +27,7 @@ section header{
 
 .banner{
     padding: 15px 15px 15px 15px;
-    height: 450px;
+    height: 500px;
     background-color: #e9ecef;
 }
 
@@ -65,5 +65,5 @@ section header{
 
 #root{
     width: 1046px;
-    margin:auto;
+    margin:0 auto;
 }
