@@ -35,3 +35,11 @@ ul, li, h1, h2, h3, p{
 .collapsed .collapsable{
     display:none;
 }
+
+.change-state{
+    background: none;
+	color: inherit;
+	border: none;
+	cursor: pointer;
+	outline: inherit;
+}
