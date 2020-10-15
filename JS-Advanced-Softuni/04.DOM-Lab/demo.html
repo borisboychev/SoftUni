@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>My first Page</title>
+  </head>
+  <body>
+    <h1>Intro to DOM</h1>
+    <ul>
+      <li>DOM Methods</li>
+      <li>DOM Properties</li>
+    </ul>
+    <script>
+      let heading = document.getElementsByTagName("h1");
+      heading[0].innerHTML += `<u> YEY</u>`;
+      heading[0].style.backgroundColor = "#434243";
+      heading[0].style.color = "#644223";
+    </script>
+  </body>
+</html>
