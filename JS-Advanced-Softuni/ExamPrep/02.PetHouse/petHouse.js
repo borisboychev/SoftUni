@@ -1,14 +1,14 @@
 function solveClasses() {
   class Pet {
+    comments = [];
     constructor(owner, name) {
       this.owner = owner;
       this.name = name;
-      this.comments = [];
     }
 
     addComment(comment) {
       if (this.comments.includes(comment)) {
-        return "This comment is already added!";
+        throw new Error("This comment is already added!");
       }
       this.comments.push(comment);
       return "Comment is added.";
@@ -22,12 +22,10 @@ function solveClasses() {
       let result = `Here is ${this.owner}'s pet ${this.name}.`;
 
       if (this.comments.length > 0) {
-        result += "\nSpecial requirements: ";
-        result += this.comments.join(", ");
-
-        return result;
+        result += "\n";
+        result += `Special requirements: ${this.comments.join(", ")}`;
       }
-      return `Here is ${this.owner}'s pet ${this.name}.`;
+      return result;
     }
   }
   class Cat extends Pet {
@@ -42,12 +40,16 @@ function solveClasses() {
     }
 
     toString() {
-      let result = `\nMain information:\n${this.name} is a cat with ${this.insideHabits}`;
+      let result = super.toString();
+      result += "\n";
+      result += "Main information:";
+      result += "\n";
+      result += `${this.name} is cat with ${this.insideHabits}`;
       if (this.scratching) {
-        return super.toString() + result + ", but beware of scratches.";
+        result += ", but beware of scratches";
       }
 
-      return super.toString() + result + ".";
+      return result + ".";
     }
   }
 
@@ -63,9 +65,12 @@ function solveClasses() {
     }
 
     toString() {
-      let result = `\nMain information:\n${this.name} is a dog with need of ${this.runningNeeds}km running every day and ${this.trainability} trainability.`;
-
-      return super.toString() + result;
+      let result = super.toString();
+      result += "\n";
+      result += "Main information:";
+      result += "\n";
+      result += `${this.name} is a dog with need of ${this.runningNeeds}km running every day and ${this.trainability} trainability.`;
+      return result;
     }
   }
 
@@ -94,17 +99,3 @@ console.log(dog.addComment("likes to be brushed"));
 console.log(dog.addComment("sleeps a lot"));
 console.log(dog.feed());
 console.log(dog.toString());
-
-// const pet = new Pet("Boris", "Morgana");
-
-// console.log(pet.addComment("juvala javala"));
-// console.log(pet.addComment("asd"));
-// console.log(pet.toString());
-
-// const cat = new Cat("Boris", "Morgana", "sleeping", true);
-// console.log(cat.feed());
-// console.log(cat.toString());
-// console.log("----------------------------------------------------");
-// const dog = new Dog("Boris", "aira", "eating", "ready");
-// console.log(dog.feed());
-// console.log(dog.toString());
