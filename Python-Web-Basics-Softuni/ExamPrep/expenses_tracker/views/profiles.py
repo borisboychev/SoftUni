@@ -37,7 +37,7 @@ def edit_profile(request):
 def delete_profile(request):
     profile = Profile.objects.all()[0]
 
-    if request == "GET":
+    if request.method == "GET":
         form = ProfileForm(instance=profile)
         form.fields["budget"].widget.attrs["disable"] = True
         form.fields["first_name"].widget.attrs["disable"] = True
