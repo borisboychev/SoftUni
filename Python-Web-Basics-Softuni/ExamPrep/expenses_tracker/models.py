@@ -13,4 +13,3 @@ class Expense(models.Model):
     image_url = models.URLField()
     description = models.TextField()
     price = models.FloatField()
-
