@@ -1,7 +1,7 @@
 function getInfo() {
   let stopId = document.getElementById("stopId");
   let stopNameDiv = document.getElementById("stopName");
-  let bussesUl = document.getElementById("buses");
+  let busesUl = document.getElementById("buses");
   let validBusses = ["1287", "1308", "1327", "2234"];
 
   if (!validBusses.includes(stopId.value)) {
@@ -15,8 +15,8 @@ function getInfo() {
     .then((data) => {
       stopNameDiv.textContent = data.name;
       Object.keys(data.buses).forEach(
-        (b) =>
-          (bussesUl.innerHTML += `<li>Bus ${b} arrives in ${data.buses[b]} minutes</li>`)
+        (k) =>
+          (busesUl.innerHTML += `<li>Bus ${k} arrives in ${data.buses[k]} minutes</li>`)
       );
     });
 }
