@@ -1,0 +1,17 @@
+{% extends 'common/base/base.html' %}
+
+{% block site_content %}
+    <h1 class="text-center">All Pythons</h1>
+    <div class="d-flex p-3">
+        {% for python in pythons %}
+        <div class="card m-3" style="width: 18rem;">
+            <img class="card-img-top" src="{{ python.image }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ python.name }}</h5>
+                <p class="card-text">{{ python.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+ {% endblock %}
+
