@@ -1,0 +1,9 @@
+{% load todo_details %}
+<div>
+    {% if todo.state %}
+        <strong class="text-success">{{ todo.text|upper }}</strong>
+    {% else %}
+        <strong class="text-danger">{{ todo.text|lower|capfirst|truncatechars:2 }}</strong>
+    {% endif %}
+    {{ todo.description }}
+</div>

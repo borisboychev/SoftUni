@@ -1,0 +1,28 @@
+{% extends 'templates_advanced/shared/base.html' %}
+{% load static %}
+{% load todo_details %}
+{% load bootstrap_form %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block site_title %}
+    Home | My Site
+{% endblock %}
+
+{% block site_content %}
+    <div class="container">
+        {% bootstrap_form form=form method='post' action="my-action" %}
+    </div>
+    <div class="container">
+        <ul>
+            {% for todo in todos %}
+                <li>
+                    {#                {% include '../../templates_advanced/partials/todo-item.html' with todo=todo %}#}
+                    {% todo_details todo=todo %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
