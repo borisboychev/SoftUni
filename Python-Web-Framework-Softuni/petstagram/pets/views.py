@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 
+from core.clean_up import clean_up
 from pets.forms.comment_form import CommentForm
 from pets.forms.pet_form import PetForm
 from pets.models import Pet, Like, Comment
@@ -23,7 +24,7 @@ def details_or_comment_pet(request, pk):
 
         return render(request, 'pet_detail.html', context)
     else:
-        form = CommentForm(request.POST)
+        form = CommentForm(request.POST, request.FILES)
         if form.is_valid():
             comment = Comment(text=form.cleaned_data['text'])
             comment.pet = pet
@@ -48,11 +49,15 @@ def persist_pet(request, pet, template_name):
 
         return render(request, f'{template_name}.html', context)
     else:
+        old_image = pet.image
         form = PetForm(
             request.POST,
+            request.FILES,
             instance=pet
         )
         if form.is_valid():
+            if old_image:
+                clean_up(old_image.path)
             form.save()
             return redirect('pet details or comment', pet.pk)
 
@@ -83,6 +88,7 @@ def delete_pet(request, pk):
 
         return render(request, 'pet_delete.html', context)
     else:
+        clean_up(pet.image.path)
         pet.delete()
         return redirect('list pets')
 
@@ -110,6 +116,7 @@ def edit_pet_long(request, pk):
     else:
         form = PetForm(
             request.POST,
+            request.FILES,
             instance=pet
         )
         if form.is_valid():
@@ -134,7 +141,7 @@ def create_pet_long(request):
 
         return render(request, 'pet_create.html', context)
     else:
-        form = PetForm(request.POST)
+        form = PetForm(request.POST, request.FILES)
         if form.is_valid():
             pet = form.save()
             return redirect('pet details or comment', pet.pk)
