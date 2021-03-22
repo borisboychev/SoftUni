@@ -27,6 +27,8 @@ function attachEvents() {
       method: "POST",
       body: JSON.stringify({ author: author.value, content: content.value }),
     });
+    author.value = "";
+    content.value = "";
   }
 }
 

@@ -20,6 +20,10 @@ class Pet(models.Model):
     description = models.TextField(blank=False)
     image_url = models.URLField(blank=False)
 
+    def __str__(self):
+        return f"{self.id}; {self.name}; {self.age}"
+
 
 class Like(models.Model):
-    pet = models.ForeignKey(Pet, on_delete=models.DO_NOTHING)
+    pet = models.ForeignKey(Pet, on_delete=models.CASCADE)
+    test = models.CharField(max_length=2)
